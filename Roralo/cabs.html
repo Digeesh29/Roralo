@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Ride - Roralo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .btn-primary { background-image: linear-gradient(to right, #3b82f6, #60a5fa); transition: all 0.3s ease; }
+        .btn-primary:hover { background-image: linear-gradient(to right, #2563eb, #3b82f6); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+    </style>
+</head>
+<body class="text-gray-800">
+    
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-600">Roralo</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6 md:p-8 pt-24">
+        <div class="max-w-3xl mx-auto mb-12">
+            <ol class="flex items-center w-full">
+                <li class="flex w-full items-center text-blue-600 after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-600 after:border-4 after:inline-block">
+                    <span class="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full lg:h-12 lg:w-12 shrink-0"><i class="fas fa-check text-xl"></i></span>
+                </li>
+                <li class="flex w-full items-center text-blue-600 after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-4 after:inline-block">
+                    <span class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full lg:h-12 lg:w-12 shrink-0"><i class="fas fa-taxi text-xl text-blue-600"></i></span>
+                </li>
+                <li class="flex items-center">
+                    <span class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 shrink-0"><i class="fas fa-credit-card text-xl text-gray-500"></i></span>
+                </li>
+            </ol>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <h2 class="text-3xl font-bold mb-2">Choose Your Ride</h2>
+                <p class="text-gray-500 mb-6">Your cab will be waiting at the airport. Price is fixed, no surprises!</p>
+                
+                <div class="mb-6">
+                    <label for="dropoff" class="block text-sm font-medium text-gray-700">Enter Drop-off Location</label>
+                    <div class="relative">
+                        <i class="fas fa-map-pin absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="dropoff" placeholder="e.g., The Taj Mahal Palace, Mumbai" class="w-full border-gray-300 rounded-lg pl-10 pr-4 py-3 focus:ring-2 focus:ring-blue-400">
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="border border-blue-500 bg-blue-50 ring-2 ring-blue-300 rounded-xl p-4 flex items-center justify-between cursor-pointer transition duration-200">
+                        <div class="flex items-center">
+                            <div class="text-4xl mr-5 text-blue-500"><i class="fas fa-car-side"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Basic <span class="text-gray-500 font-medium">(Hatchback)</span></h4>
+                                <p class="text-sm text-gray-600">Perfect for solo travelers or couples.</p>
+                                <div class="flex items-center space-x-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-users mr-1"></i> 1-3</span><span><i class="fas fa-suitcase-rolling mr-1"></i> 2 bags</span></div>
+                            </div>
+                        </div>
+                        <div class="text-right"><p class="text-xl font-bold">₹ 850</p><span class="text-xs font-semibold text-blue-600">SELECTED</span></div>
+                    </div>
+                    <div class="border border-gray-200 bg-white rounded-xl p-4 flex items-center justify-between cursor-pointer transition duration-200 hover:shadow-md">
+                        <div class="flex items-center">
+                            <div class="text-4xl mr-5 text-blue-500"><i class="fas fa-car-alt"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">Balanced <span class="text-gray-500 font-medium">(Sedan)</span></h4>
+                                <p class="text-sm text-gray-600">Comfortable ride with more space.</p>
+                                <div class="flex items-center space-x-4 mt-2 text-sm text-gray-500"><span><i class="fas fa-users mr-1"></i> 1-4</span><span><i class="fas fa-suitcase-rolling mr-1"></i> 3 bags</span></div>
+                            </div>
+                        </div>
+                        <div class="text-right"><p class="text-xl font-bold">₹ 1,050</p><span class="text-xs font-semibold text-gray-400">CHOOSE</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg h-fit">
+                <h3 class="text-xl font-bold border-b pb-4 mb-4">Trip Summary</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <div><p class="font-semibold">Vistara UK 990</p><p class="text-sm text-gray-500">DEL <i class="fas fa-arrow-right mx-1"></i> BOM</p></div>
+                        <p class="font-semibold">₹ 5,980</p>
+                    </div>
+                     <div class="flex justify-between items-center">
+                        <div><p class="font-semibold">Basic Cab (Hatchback)</p><p class="text-sm text-gray-500">Airport to City</p></div>
+                        <p class="font-semibold">₹ 850</p>
+                    </div>
+                    <div class="border-t pt-4 mt-4">
+                        <div class="flex justify-between font-bold text-lg"><span>Total Price</span><span>₹ 6,830</span></div>
+                        <p class="text-xs text-gray-500 mt-1">Includes all taxes and fees</p>
+                    </div>
+                    <a href="checkout.html" class="block text-center w-full btn-primary text-white font-bold text-lg px-6 py-3 rounded-lg transition duration-300">Proceed to Payment</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mt-8 text-gray-500 text-sm">&copy; 2025 Roralo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

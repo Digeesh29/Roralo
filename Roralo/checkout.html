@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment - Roralo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-600">Roralo</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6 md:p-8 pt-24">
+        <div class="max-w-3xl mx-auto mb-12">
+            <ol class="flex items-center w-full">
+                <li class="flex w-full items-center text-blue-600 after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-600 after:border-4 after:inline-block">
+                    <span class="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full lg:h-12 lg:w-12 shrink-0"><i class="fas fa-check text-xl"></i></span>
+                </li>
+                <li class="flex w-full items-center text-blue-600 after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-600 after:border-4 after:inline-block">
+                    <span class="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full lg:h-12 lg:w-12 shrink-0"><i class="fas fa-check text-xl"></i></span>
+                </li>
+                <li class="flex items-center text-blue-600">
+                    <span class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full lg:h-12 lg:w-12 shrink-0"><i class="fas fa-credit-card text-xl text-blue-600"></i></span>
+                </li>
+            </ol>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold mb-6">Secure Payment</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label for="card-number" class="block text-sm font-medium text-gray-700">Card Number</label>
+                        <input type="text" id="card-number" placeholder="**** **** **** ****" class="w-full mt-1 border-gray-300 rounded-lg py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="card-name" class="block text-sm font-medium text-gray-700">Name on Card</label>
+                        <input type="text" id="card-name" placeholder="John Doe" class="w-full mt-1 border-gray-300 rounded-lg py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="flex space-x-4">
+                        <div class="flex-1">
+                            <label for="expiry-date" class="block text-sm font-medium text-gray-700">Expiry Date</label>
+                            <input type="text" id="expiry-date" placeholder="MM/YY" class="w-full mt-1 border-gray-300 rounded-lg py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div class="flex-1">
+                            <label for="cvv" class="block text-sm font-medium text-gray-700">CVV</label>
+                            <input type="text" id="cvv" placeholder="***" class="w-full mt-1 border-gray-300 rounded-lg py-2 px-3 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-xl shadow-inner h-fit">
+                <h3 class="text-xl font-bold border-b pb-4 mb-4">Final Confirmation</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <div><p class="font-semibold">Vistara UK 990</p><p class="text-sm text-gray-500">DEL <i class="fas fa-arrow-right mx-1"></i> BOM</p></div>
+                        <p class="font-semibold">₹ 5,980</p>
+                    </div>
+                     <div class="flex justify-between items-center">
+                        <div><p class="font-semibold">Basic Cab (Hatchback)</p><p class="text-sm text-gray-500">Airport to Taj Palace</p></div>
+                        <p class="font-semibold">₹ 850</p>
+                    </div>
+                    <div class="border-t pt-4 mt-4">
+                        <div class="flex justify-between font-bold text-2xl text-blue-600"><span>To Pay</span><span>₹ 6,830</span></div>
+                    </div>
+                    <a href="confirmation.html" class="w-full block text-center bg-green-600 text-white font-bold text-lg px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 flex items-center justify-center">
+                        <i class="fas fa-lock mr-2"></i> Confirm & Pay Securely
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mt-8 text-gray-500 text-sm">&copy; 2025 Roralo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

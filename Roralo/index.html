@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roralo - Your Complete Trip, Booked in One Go</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .hero-bg { background-image: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=1920&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed; }
+        .booking-widget { background: rgba(17, 24, 39, 0.7); backdrop-filter: saturate(120%) blur(5px); -webkit-backdrop-filter: saturate(120%) blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .tab-active { border-bottom-width: 3px; border-color: #3b82f6; color: #ffffff; font-weight: 600; background-color: rgba(59, 130, 246, 0.1); }
+        .tab-inactive { color: #e5e7eb; border-bottom: 3px solid transparent; }
+        .fade-in-up { animation: fadeInUp 0.8s ease-in-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-primary { background-image: linear-gradient(to right, #3b82f6, #60a5fa); transition: all 0.3s ease; }
+        .btn-primary:hover { background-image: linear-gradient(to right, #2563eb, #3b82f6); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+        .hero-text-animation { animation: textFocusIn 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both; }
+        @keyframes textFocusIn { 0% { filter: blur(12px); opacity: 0; } 100% { filter: blur(0px); opacity: 1; } }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-600">Roralo</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">How It Works</a>
+                <a href="profile.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">My Profile</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:block text-gray-600 font-medium hover:text-blue-600 transition duration-300">Log In</button>
+                <button class="btn-primary text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 transition duration-300 shadow-md">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-bg h-screen flex items-center justify-center pt-16">
+            <div class="text-center text-white">
+                <h2 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 hero-text-animation" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">Your Entire Trip, One Ticket.</h2>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto hero-text-animation" style="animation-delay: 0.3s;">Book your flight and airport cab together. No waiting, no surge pricing, just seamless travel.</p>
+                
+                <div id="booking-widget" class="container mx-auto max-w-4xl booking-widget rounded-2xl p-6 md:p-8 fade-in-up" style="animation-delay: 0.6s;">
+                    <div class="flex border-b border-gray-200/20 mb-6">
+                        <button class="py-3 px-6 text-lg tab-active flex items-center rounded-t-lg"><i class="fas fa-plane-departure mr-2"></i> Flight + Cab</button>
+                        <a href="hotels.html" class="py-3 px-6 text-lg tab-inactive flex items-center rounded-t-lg transition"><i class="fas fa-hotel mr-2"></i> Hotels</a>
+                    </div>
+
+                    <form class="space-y-4 md:space-y-0 md:flex md:space-x-4 items-end">
+                        <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="from" class="block text-left text-sm font-medium text-gray-200">From</label>
+                                <div class="relative"><i class="fas fa-map-marker-alt absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i><input type="text" id="from" placeholder="Enter city or airport" class="w-full bg-white/10 text-white placeholder-gray-300 border-2 border-transparent focus:border-blue-500 rounded-lg pl-10 pr-4 py-3 focus:ring-0 focus:bg-white/20 transition"></div>
+                            </div>
+                            <div>
+                                <label for="to" class="block text-left text-sm font-medium text-gray-200">To</label>
+                                <div class="relative"><i class="fas fa-map-marker-alt absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i><input type="text" id="to" placeholder="Enter city or airport" class="w-full bg-white/10 text-white placeholder-gray-300 border-2 border-transparent focus:border-blue-500 rounded-lg pl-10 pr-4 py-3 focus:ring-0 focus:bg-white/20 transition"></div>
+                            </div>
+                            <div>
+                                <label for="departure-date" class="block text-left text-sm font-medium text-gray-200">Departure</label>
+                                <input type="date" id="departure-date" class="w-full bg-white/10 text-white border-2 border-transparent focus:border-blue-500 rounded-lg px-4 py-3 focus:ring-0 focus:bg-white/20 transition">
+                            </div>
+                            <div>
+                                <label for="passengers" class="block text-left text-sm font-medium text-gray-200">Passengers</label>
+                                <input type="number" id="passengers" value="1" min="1" class="w-full bg-white/10 text-white border-2 border-transparent focus:border-blue-500 rounded-lg px-4 py-3 focus:ring-0 focus:bg-white/20 transition">
+                            </div>
+                        </div>
+                        <a href="flights.html" class="w-full md:w-auto btn-primary text-white font-bold px-8 py-3 rounded-lg text-lg shadow-lg flex items-center justify-center">
+                            <i class="fas fa-search mr-2"></i> Search
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <section id="how-it-works" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-4 scroll-reveal">Travel Simplified in 3 Steps</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12 scroll-reveal">From your doorstep to your destination, all in one seamless booking.</p>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center scroll-reveal">
+                        <div class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"><i class="fas fa-search-location text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-2">1. Search & Select</h3>
+                        <p class="text-gray-600">Enter your travel details and choose the perfect flight from thousands of options.</p>
+                    </div>
+                    <div class="text-center scroll-reveal" style="transition-delay: 0.2s;">
+                        <div class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"><i class="fas fa-taxi text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-2">2. Choose Your Cab</h3>
+                        <p class="text-gray-600">Select your preferred cab type. The price is fixed based on distance – no surge surprises.</p>
+                    </div>
+                    <div class="text-center scroll-reveal" style="transition-delay: 0.4s;">
+                        <div class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"><i class="fas fa-ticket-alt text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-2">3. Get One Ticket</h3>
+                        <p class="text-gray-600">Pay once and receive a single, combined ticket for your entire journey. It's that simple!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold mb-4 scroll-reveal">Why Travelers Choose Roralo</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-16 scroll-reveal">We've addressed the biggest travel frustrations so you don't have to.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal">
+                        <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-clock"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Zero Waiting Time</h3>
+                        <p class="text-gray-600">Your pre-booked cab tracks your flight's real-time status and is ready the moment you land.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal" style="transition-delay: 0.1s;">
+                        <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-tags"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Transparent Pricing</h3>
+                        <p class="text-gray-600">The price you see is the price you pay. No hidden fees or unpredictable surge pricing at the airport.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal" style="transition-delay: 0.2s;">
+                        <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3 class="text-xl font-bold mb-2">One Unified Bill</h3>
+                        <p class="text-gray-600">Forget multiple bookings and payments. Get a single, clear invoice for your entire trip.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">Roralo</h2>
+            <p class="mb-6">Making travel seamless from start to finish.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+            </div>
+            <p class="mt-8 text-gray-500 text-sm">&copy; 2025 Roralo. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Scroll reveal animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

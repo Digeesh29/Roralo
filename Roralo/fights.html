@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Flight - Roralo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .flight-card:hover { transform: translateY(-5px) scale(1.01); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+        .btn-primary { background-image: linear-gradient(to right, #3b82f6, #60a5fa); transition: all 0.3s ease; }
+        .btn-primary:hover { background-image: linear-gradient(to right, #2563eb, #3b82f6); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-600">Roralo</a>
+             <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#features" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Features</a>
+                <a href="profile.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">My Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6 md:p-8 pt-24">
+        <div class="max-w-3xl mx-auto mb-12">
+            <ol class="flex items-center w-full">
+                <li class="flex w-full items-center text-blue-600 after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-100 after:border-4 after:inline-block">
+                    <span class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full lg:h-12 lg:w-12 shrink-0"><i class="fas fa-plane text-xl text-blue-600"></i></span>
+                </li>
+                <li class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-4 after:inline-block">
+                    <span class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 shrink-0"><i class="fas fa-taxi text-xl text-gray-500"></i></span>
+                </li>
+                <li class="flex items-center">
+                    <span class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 shrink-0"><i class="fas fa-credit-card text-xl text-gray-500"></i></span>
+                </li>
+            </ol>
+        </div>
+    
+        <h2 class="text-3xl font-bold mb-2 text-center">Select Your Outbound Flight</h2>
+        <p class="text-center text-gray-500 mb-8">Your cab will be scheduled automatically based on your flight's arrival time.</p>
+
+        <div class="bg-white p-4 rounded-lg shadow-md mb-8 flex flex-wrap gap-4 items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-filter text-gray-500"></i>
+                <span class="font-semibold">Stops:</span>
+                <button class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">Non-stop</button>
+                <button class="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm font-medium hover:bg-gray-200">1 Stop</button>
+            </div>
+            <div>
+                <select class="rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+                    <option>Sort by: Price (Low to High)</option>
+                    <option>Sort by: Duration (Shortest)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col md:flex-row items-center justify-between transition duration-300 flight-card">
+                <div class="w-full md:w-1/5 flex items-center mb-4 md:mb-0">
+                    <img src="https://placehold.co/40x40/333/fff?text=IG" alt="IndiGo Logo" class="mr-4 rounded-md"/>
+                    <div><div class="font-bold text-lg">IndiGo</div><div class="text-sm text-gray-500">6E 204</div></div>
+                </div>
+                <div class="w-full md:w-3/5 flex items-center justify-between text-center mb-4 md:mb-0">
+                    <div><div class="text-2xl font-bold">06:30</div><div class="text-gray-600">DEL</div></div>
+                    <div class="text-center text-sm text-gray-500"><i class="fas fa-long-arrow-alt-right text-2xl text-gray-300"></i><div>2h 15m</div><div>Non-stop</div></div>
+                    <div><div class="text-2xl font-bold">08:45</div><div class="text-gray-600">BOM</div></div>
+                </div>
+                <div class="w-full md:w-1/5 text-center md:text-right">
+                    <div class="text-2xl font-bold mb-2">₹ 5,450</div>
+                    <a href="cabs.html" class="w-full block btn-primary text-white font-semibold px-6 py-2 rounded-lg transition duration-300">Select Flight</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col md:flex-row items-center justify-between transition duration-300 flight-card">
+                <div class="w-full md:w-1/5 flex items-center mb-4 md:mb-0">
+                    <img src="https://placehold.co/40x40/333/fff?text=VS" alt="Vistara Logo" class="mr-4 rounded-md"/>
+                    <div><div class="font-bold text-lg">Vistara</div><div class="text-sm text-gray-500">UK 990</div></div>
+                </div>
+                <div class="w-full md:w-3/5 flex items-center justify-between text-center mb-4 md:mb-0">
+                    <div><div class="text-2xl font-bold">08:10</div><div class="text-gray-600">DEL</div></div>
+                    <div class="text-center text-sm text-gray-500"><i class="fas fa-long-arrow-alt-right text-2xl text-gray-300"></i><div>2h 10m</div><div>Non-stop</div></div>
+                    <div><div class="text-2xl font-bold">10:20</div><div class="text-gray-600">BOM</div></div>
+                </div>
+                <div class="w-full md:w-1/5 text-center md:text-right">
+                    <div class="text-2xl font-bold mb-2">₹ 5,980</div>
+                    <a href="cabs.html" class="w-full block btn-primary text-white font-semibold px-6 py-2 rounded-lg transition duration-300">Select Flight</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">Roralo</h2>
+            <p class="mt-8 text-gray-500 text-sm">&copy; 2025 Roralo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
