@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roralo - Luxury Travel Concierge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .scroll-animated {
+            opacity: 0;
+        }
+        .scroll-animated.is-visible {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#111827',
+                        'primary-hover': '#374151',
+                        'accent': '#BFA181',
+                        'accent-hover': '#A98B6C',
+                        'light': '#F8F7F5',
+                        'dark': '#111111',
+                        'secondary': '#5A6474',
+                        'success': '#16a34a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light">
+
+    <div class="bg-white">
+        <!-- Header -->
+        <header class="flex justify-between items-center p-6 border-b border-gray-200 max-w-7xl mx-auto sticky top-0 bg-white z-50">
+            <h1 class="text-3xl font-bold text-dark cursor-pointer" id="logo">Roralo</h1>
+            <nav id="main-nav" class="hidden md:flex items-center gap-8">
+                <a href="#" data-view="landing" class="nav-link text-secondary hover:text-dark font-semibold">Home</a>
+                <a href="#about" class="nav-link text-secondary hover:text-dark font-semibold">Our Story</a>
+                <a href="#contact" class="nav-link text-secondary hover:text-dark font-semibold">Contact</a>
+            </nav>
+            <button id="header-book-now-btn" class="px-5 py-2 bg-primary text-white font-semibold rounded-lg shadow-sm hover:bg-primary-hover transition-transform hover:scale-105">Book Now</button>
+        </header>
+
+        <!-- Landing Page View -->
+        <main id="landing-page-view">
+            <section class="text-center py-20 px-6 bg-white">
+                 <div class="max-w-4xl mx-auto">
+                    <h2 class="text-6xl font-bold text-dark mb-4">Effortless Journeys Begin Here</h2>
+                    <p class="text-lg text-secondary mb-12 max-w-2xl mx-auto">Discover a new standard of travel. We integrate your flight and private cab into one seamless, luxury experience.</p>
+                </div>
+                <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+                    <img src="https://images.unsplash.com/photo-1510076857177-7470d7f2086d?q=80&w=2070&auto=format&fit=crop" alt="Airplane wing over a city" class="rounded-lg h-96 w-full object-cover shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=2070&auto=format&fit=crop" alt="Woman with luggage in an airport" class="rounded-lg h-96 w-full object-cover shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?q=80&w=1931&auto=format&fit=crop" alt="Car driving on a scenic road" class="rounded-lg h-96 w-full object-cover shadow-lg transform hover:scale-105 transition-transform duration-300">
+                </div>
+            </section>
+            
+            <section class="py-24 bg-white scroll-animated">
+                <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center px-6">
+                    <div>
+                        <h4 class="text-2xl font-bold text-dark mb-2">Seamless Integration</h4>
+                        <p class="text-secondary">Book your flight and cab in a single transaction. No more hassle.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-dark mb-2">Luxury Fleet</h4>
+                        <p class="text-secondary">Travel in comfort and style with our curated selection of premium vehicles.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-dark mb-2">24/7 Concierge</h4>
+                        <p class="text-secondary">Our dedicated support team is always available to assist you.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="py-24 bg-light scroll-animated">
+                <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
+                    <div>
+                        <h3 class="text-5xl font-bold text-dark mb-6">Our Story</h3>
+                        <p class="text-secondary text-lg leading-relaxed">Travel coordination is complex. Roralo was born from a simple desire: to merge the two most critical parts of any journey—the flight and the airport transfer—into one elegant solution. We are dedicated to providing a seamless, door-to-door experience, eliminating uncertainty and saving you precious time.</p>
+                         <button id="cta-btn" class="mt-8 px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-sm hover:bg-primary-hover transition-transform hover:scale-105">Start Your Journey</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1496843582404-e595b18b53ca?q=80&w=2070&auto=format&fit=crop" alt="Modern airport terminal architecture" class="rounded-lg shadow-xl">
+                </div>
+            </section>
+            
+            <section class="py-24 bg-white scroll-animated">
+                <div class="max-w-6xl mx-auto text-center px-6">
+                    <h3 class="text-5xl font-bold text-dark mb-4">Travel, Redefined</h3>
+                    <p class="text-lg text-secondary mb-12 max-w-3xl mx-auto">From exclusive lounges to breathtaking views from 30,000 feet, we curate every detail to provide an unmatched travel experience.</p>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <img src="https://images.unsplash.com/photo-1521655702229-4d8b248a3c03?q=80&w=1931&auto=format&fit=crop" alt="Business class airplane seats" class="rounded-lg h-80 w-full object-cover shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1559132643-a603a08a473a?q=80&w=2070&auto=format&fit=crop" alt="View of mountains from an airplane" class="rounded-lg h-80 w-full object-cover shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1574647193901-64a15a69141f?q=80&w=2070&auto=format&fit=crop" alt="Professional cab service waiting at airport" class="rounded-lg h-80 w-full object-cover shadow-lg">
+                    </div>
+                </div>
+            </section>
+            
+            <section id="contact" class="py-24 bg-light scroll-animated">
+                 <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
+                    <div>
+                        <h3 class="text-5xl font-bold text-dark mb-6">Get in Touch</h3>
+                        <p class="text-secondary text-lg leading-relaxed mb-8">Have a question or a special request? Our travel concierge team is available 24/7 to assist you. Fill out the form, and we'll get back to you shortly.</p>
+                        <div class="space-y-4 text-secondary">
+                            <p><strong>Email:</strong> concierge@roralo.com</p>
+                            <p><strong>Phone:</strong> +91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for your message!');">
+                            <div><label class="block mb-2 font-medium text-secondary">Full Name</label><input type="text" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dark focus:outline-none"></div>
+                            <div><label class="block mb-2 font-medium text-secondary">Email Address</label><input type="email" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dark focus:outline-none"></div>
+                            <div><label class="block mb-2 font-medium text-secondary">Message</label><textarea rows="4" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dark focus:outline-none"></textarea></div>
+                            <button type="submit" class="w-full py-3 bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-accent-hover transition-all">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Booking App View -->
+        <main id="booking-app-view" class="hidden">
+            <div class="max-w-4xl mx-auto my-10 bg-white rounded-2xl shadow-lg border border-gray-200">
+                 <section id="search-view" class="p-8">
+                    <div class="flex items-center gap-4 mb-6 border-b"><button class="py-3 px-4 font-semibold text-dark border-b-2 border-dark">One-way</button><button class="py-3 px-4 font-semibold text-secondary border-b-2 border-transparent hover:text-dark">Round-trip</button><button class="py-3 px-4 font-semibold text-secondary border-b-2 border-transparent hover:text-dark">Multi-city</button></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center"><div class="relative"><label class="block mb-2 font-medium text-secondary">From</label><input id="from-input" class="w-full p-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dark focus:outline-none" value="DEL - New Delhi"><svg class="w-6 h-6 absolute left-2 top-11 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg></div><div class="relative"><label class="block mb-2 font-medium text-secondary">To</label><input id="to-input" class="w-full p-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dark focus:outline-none" value="BOM - Mumbai"><svg class="w-6 h-6 absolute left-2 top-11 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg></div></div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6"><div><label class="block mb-2 font-medium text-secondary">Departure</label><input type="text" class="w-full p-3 rounded-lg border border-gray-300" value="Thu, 28 May"></div><div><label class="block mb-2 font-medium text-secondary">Class</label><input type="text" class="w-full p-3 rounded-lg border border-gray-300" value="Economy"></div><div><label class="block mb-2 font-medium text-secondary">Passenger</label><input type="text" class="w-full p-3 rounded-lg border border-gray-300" value="1 Adult"></div><div><label class="block mb-2 font-medium text-secondary">Cab</label><input type="text" class="w-full p-3 rounded-lg border border-gray-300" value="End-to-End"></div></div>
+                    <button id="search-flights-btn" class="w-full mt-8 py-4 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-hover transition-all text-lg">Search Flights</button>
+                 </section>
+                 <section id="results-view" class="p-8 hidden"><div class="flex justify-between items-center mb-6"><h2 class="text-3xl font-bold text-dark">Available Flights</h2><button id="back-to-search-btn" class="px-6 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-gray-700 transition-all">Modify Search</button></div><div id="results-list" class="space-y-4"></div></section>
+                 <section id="booking-details-view" class="p-8 grid grid-cols-1 md:grid-cols-3 gap-8 hidden"><div class="md:col-span-2"><h3 class="text-2xl font-bold text-dark mb-4">Select Your Seat</h3><div class="p-4 bg-gray-100 rounded-lg border border-gray-200 mb-8"><div id="seat-grid" class="grid grid-cols-6 gap-3"></div></div><h3 class="text-2xl font-bold text-dark mb-4">Add Luggage</h3><div id="luggage-options" class="space-y-3"></div></div><div><h3 class="text-2xl font-bold text-dark mb-4">Price Summary</h3><div class="p-6 bg-gray-50 rounded-lg border border-gray-200 space-y-3"><div class="flex justify-between text-secondary"><span>Flight Price</span><span id="summary-flight-price">₹0</span></div><div class="flex justify-between text-secondary"><span>Selected Seat</span><span id="summary-seat-price">₹0</span></div><div class="flex justify-between text-secondary"><span>Extra Luggage</span><span id="summary-luggage-price">₹0</span></div><div class="flex justify-between text-secondary"><span>Airport Cab</span><span id="summary-cab-price">₹1,200</span></div><div class="flex justify-between text-secondary"><span>Fees & Taxes</span><span id="summary-fees-price">₹250</span></div><div class="flex justify-between text-dark font-bold text-xl pt-4 border-t border-gray-300"><span>Total</span><span id="summary-total-price">₹0</span></div><button id="proceed-to-checkout-btn" class="w-full mt-4 px-8 py-3 bg-success text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition-all">Confirm & Proceed</button></div></div></section>
+                 <section id="checkout-view" class="p-12 hidden"><div class="max-w-md mx-auto"><h2 class="text-3xl font-bold text-dark mb-6 text-center">Final Payment</h2><p class="text-secondary mb-6 text-center">This is a simulated payment page.</p><div class="space-y-4"><div><label class="block mb-2 font-medium text-secondary">Card Number</label><input class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dark focus:outline-none" placeholder="1234 5678 9101 1121"></div><div><label class="block mb-2 font-medium text-secondary">Card Holder Name</label><input class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-dark focus:outline-none" placeholder="John Doe"></div></div><button id="pay-now-btn" class="w-full mt-8 px-8 py-3 bg-success text-white font-semibold rounded-lg shadow-md hover:bg-green-600 transition-all">Pay Now (<span id="final-payment-amount"></span>)</button></div></section>
+                 <section id="confirmation-view" class="text-center p-16 hidden"><svg class="w-20 h-20 text-success mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><h2 class="text-4xl font-bold text-dark mb-4">Booking Confirmed!</h2><p class="text-lg text-secondary mb-8 max-w-xl mx-auto">Your flight and cab bundle is confirmed. An invoice and details have been sent to your email.</p><button id="back-to-home-btn" class="px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-hover transition-all">Book Another Trip</button></section>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-white py-12">
+            <div class="max-w-7xl mx-auto text-center px-6"><p class="text-gray-500">&copy; 2025 Roralo. All rights reserved.</p></div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let state = {
+                activeApp: 'landing',
+                bookingView: 'search',
+                isLoggedIn: true,
+                booking: { flightPrice: 0, seatPrice: 0, luggagePrice: 0, cabPrice: 1200, fees: 250 }
+            };
+
+            const landingPageView = document.getElementById('landing-page-view');
+            const bookingAppView = document.getElementById('booking-app-view');
+            const allBookingViews = bookingAppView.querySelectorAll('section');
+
+            const showView = () => {
+                if (state.activeApp === 'landing') {
+                    landingPageView.classList.remove('hidden');
+                    bookingAppView.classList.add('hidden');
+                } else {
+                    landingPageView.classList.add('hidden');
+                    bookingAppView.classList.remove('hidden');
+                    allBookingViews.forEach(v => v.classList.add('hidden'));
+                    const currentView = document.getElementById(`${state.bookingView}-view`);
+                    if (currentView) currentView.classList.remove('hidden');
+                }
+            };
+
+            const enterBookingApp = () => {
+                state.activeApp = 'booking';
+                state.bookingView = 'search';
+                showView();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.scroll-animated').forEach(section => observer.observe(section));
+
+            const renderFlightResults = () => {
+                const list = document.getElementById('results-list');
+                const mockFlights = [{ airline: "Vistara", price: 6200 }, { airline: "IndiGo", price: 4850 }, { airline: "Air India", price: 5400 }];
+                list.innerHTML = mockFlights.map(f => `<div class="flex justify-between items-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"><div><p class="font-bold text-lg text-dark">${f.airline}</p><p class="text-sm text-secondary">Coimbatore → Delhi</p></div><div class="text-right"><p class="font-bold text-xl text-dark">₹${f.price.toLocaleString('en-IN')}</p><button class="book-flight-btn mt-1 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-hover" data-price="${f.price}">Select</button></div></div>`).join('');
+            };
+            
+            const generateSeatMap = () => {
+                const grid = document.getElementById('seat-grid');
+                grid.innerHTML = '';
+                for(let i=0; i<36; i++) {
+                    const seat = document.createElement('div');
+                    seat.className = 'h-10 rounded-md cursor-pointer transition-all flex items-center justify-center text-xs font-semibold';
+                    const type = Math.random();
+                    if(type < 0.6) { seat.classList.add('bg-gray-200', 'hover:bg-gray-300', 'text-gray-600'); seat.dataset.price = "0"; } 
+                    else if (type < 0.85) { seat.classList.add('bg-purple-100', 'text-accent', 'hover:bg-purple-200'); seat.dataset.price = "600"; } 
+                    else { seat.classList.add('bg-gray-400', 'cursor-not-allowed', 'opacity-60'); }
+                    grid.appendChild(seat);
+                }
+            };
+            
+            const renderLuggageOptions = () => {
+                 const container = document.getElementById('luggage-options');
+                 const options = [{ text: '15kg Cabin Baggage (Included)', price: 0, checked: true }, { text: '25kg Check-in Baggage', price: 800, checked: false }, { text: '35kg Check-in Baggage', price: 1500, checked: false }];
+                 container.innerHTML = options.map(opt => `<label class="flex items-center p-4 bg-white rounded-lg border border-gray-200 cursor-pointer has-[:checked]:bg-yellow-50 has-[:checked]:border-accent transition-all"><input type="radio" name="luggage" value="${opt.price}" ${opt.checked ? 'checked' : ''} class="mr-4 text-accent focus:ring-accent"><span class="flex-grow text-dark">${opt.text}</span><b class="text-dark font-semibold">₹${opt.price.toLocaleString('en-IN')}</b></label>`).join('');
+            };
+
+            const updatePriceSummary = () => {
+                const total = Object.values(state.booking).reduce((sum, val) => sum + val, 0);
+                document.getElementById('summary-flight-price').textContent = `₹${state.booking.flightPrice.toLocaleString('en-IN')}`;
+                document.getElementById('summary-seat-price').textContent = `₹${state.booking.seatPrice.toLocaleString('en-IN')}`;
+                document.getElementById('summary-luggage-price').textContent = `₹${state.booking.luggagePrice.toLocaleString('en-IN')}`;
+                document.getElementById('summary-cab-price').textContent = `₹${state.booking.cabPrice.toLocaleString('en-IN')}`;
+                document.getElementById('summary-fees-price').textContent = `₹${state.booking.fees.toLocaleString('en-IN')}`;
+                document.getElementById('summary-total-price').textContent = `₹${total.toLocaleString('en-IN')}`;
+                document.getElementById('final-payment-amount').textContent = `₹${total.toLocaleString('en-IN')}`;
+            };
+
+            document.body.addEventListener('click', (e) => {
+                const target = e.target;
+                const navLink = target.closest('.nav-link');
+
+                // --- Navigation Logic ---
+                if (target.id === 'logo' || navLink?.dataset.view === 'landing') {
+                    e.preventDefault();
+                    state.activeApp = 'landing';
+                    showView();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                if (navLink) {
+                    e.preventDefault();
+                    const targetId = navLink.getAttribute('href');
+                    if (state.activeApp !== 'landing') {
+                        state.activeApp = 'landing';
+                        showView();
+                        setTimeout(() => {
+                            document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                        }, 150);
+                    } else {
+                        document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    return;
+                }
+
+                // --- Booking App Flow ---
+                if (target.id === 'cta-btn' || target.id === 'header-book-now-btn') {
+                    enterBookingApp();
+                } else if (target.id === 'search-flights-btn') {
+                    renderFlightResults();
+                    state.bookingView = 'results';
+                    showView();
+                } else if (target.id === 'back-to-search-btn') {
+                    state.bookingView = 'search';
+                    showView();
+                } else if (target.id === 'proceed-to-checkout-btn') {
+                    state.bookingView = 'checkout';
+                    showView();
+                } else if (target.id === 'pay-now-btn') {
+                    state.bookingView = 'confirmation';
+                    showView();
+                } else if (target.id === 'back-to-home-btn') {
+                    state.bookingView = 'search';
+                    showView();
+                } else if (target.classList.contains('book-flight-btn')) {
+                    state.booking.flightPrice = parseInt(target.dataset.price);
+                    generateSeatMap();
+                    renderLuggageOptions();
+                    updatePriceSummary();
+                    state.bookingView = 'bookingDetails';
+                    showView();
+                }
+            });
+            
+            bookingAppView.addEventListener('click', (e) => {
+                 if (e.target.dataset.price) {
+                    bookingAppView.querySelectorAll('#seat-grid .ring-2').forEach(s => s.classList.remove('ring-2', 'ring-accent', 'ring-offset-2'));
+                    e.target.classList.add('ring-2', 'ring-accent', 'ring-offset-2');
+                    state.booking.seatPrice = parseInt(e.target.dataset.price);
+                    updatePriceSummary();
+                }
+            });
+            
+            bookingAppView.addEventListener('change', (e) => {
+                if (e.target.name === 'luggage') {
+                    state.booking.luggagePrice = parseInt(e.target.value);
+                    updatePriceSummary();
+                }
+            });
+
+            showView();
+        });
+    </script>
+</body>
+</html>
+
